@@ -120,13 +120,13 @@
 
   <div class="divider"></div>
 
-  <div class="section-title map-t">大分・臼杵 有機野菜マップ</div>
+  <div class="section-title map-t">臼杵市・大分市 有機野菜/ほんまもん野菜MAP</div>
   <div class="map-note">{{ data.map.note }}</div>
   <div class="map-box">
 {% include "map_svg.j2" %}
   </div>
 
-  <div class="section-title">お野菜が買えるお店<span class="honor-note">(敬称略)</span></div>
+  <div class="section-title">有機野菜/ほんまもん野菜の購入できるお店<span class="honor-note">(敬称略)</span></div>
 
   {% for area in areas %}
   <div class="area-tag {{ area.pin_class }}">{{ area.label }}</div>
