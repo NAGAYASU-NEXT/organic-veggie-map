@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>{{ data.restaurant.name }} 有機野菜マップ</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: rgba(193,101,47,0.15); }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Hiragino Sans", "Noto Sans CJK JP", "Yu Gothic", sans-serif;
+    color: #2B2A22;
+    background: #F6F1E2;
+    line-height: 1.6;
+    padding-bottom: 24px;
+  }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 0 14px; }
+
+  header { padding: 22px 0 16px; text-align: center; }
+  .stamp {
+    width: 64px; height: 64px; margin: 0 auto 10px; border-radius: 50%;
+    border: 2px solid #C1652F; display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .stamp::before { content:""; position:absolute; inset:4px; border:1px solid #C1652F; border-radius:50%; opacity:.5; }
+  .stamp span { font-weight: 700; color: #C1652F; font-size: 14px; line-height: 1.3; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.15em; color: #7A6F4E; font-weight: 600; margin-bottom: 6px; }
+  h1 {
+    font-size: 22px; line-height: 1.4; color: #33502E; font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .lede { font-size: 14px; line-height: 1.75; color: #47432F; }
+
+  .divider { height: 2px; background: #C1652F; margin: 16px 0; border-radius: 2px; }
+
+  .section-title {
+    font-size: 15px; font-weight: 800; color: #33502E;
+    background: #E7E9D9; border-radius: 8px; padding: 8px 12px; margin: 20px 0 10px;
+  }
+  .section-title.prod { background: #F1E6D3; color: #C1652F; }
+  .honor-note { font-size: 12px; font-weight: 500; opacity: 0.75; margin-left: 6px; }
+  .section-title.map-t { background: #33502E; color: #F6F1E2; text-align:center; }
+
+  .map-note { font-size: 11px; color: #8A7F5E; text-align: center; margin: -4px 0 10px; }
+  .map-box { border: 1px solid #C7BB9C; border-radius: 12px; background: #EFF3EC; padding: 6px; overflow: hidden; margin: 0 -14px; }
+  .map-box svg { width: 100%; height: auto; display: block; }
+
+  .area-tag {
+    font-size: 12px; font-weight: 800; color: #9C4A1E;
+    margin: 18px 0 6px; padding-bottom: 4px; border-bottom: 1px dashed #C7BB9C;
+  }
+  .area-tag.oita { color: #33502E; }
+  .area-tag.bungo { color: #9C7A20; }
+
+  .store-card {
+    background: #fff; border-radius: 12px; padding: 12px 14px; margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #EDE6D2;
+  }
+  .store-card.highlight { background: #FCEFE0; border-color: #E9C9A6; }
+  .s-top { display: flex; align-items: flex-start; gap: 10px; }
+  .pin {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    background: #33502E; color: #fff; font-size: 13px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; margin-top: 1px;
+  }
+  .pin.usuki { background: #9C4A1E; }
+  .pin.bungo { background: #9C7A20; }
+  .s-info { flex: 1; min-width: 0; }
+  .s-name { font-size: 16px; font-weight: 800; color: #2B2A22; line-height: 1.35; }
+  .s-addr { font-size: 12.5px; color: #7A7160; margin-top: 2px; }
+  .s-links { display: flex; gap: 8px; margin-top: 8px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 12.5px; font-weight: 700; color: #fff; text-decoration: none;
+    padding: 7px 14px; border-radius: 20px; min-height: 30px;
+  }
+  .btn.map { background: #33502E; }
+  .btn.hp { background: #C1652F; }
+  .tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag {
+    font-size: 11.5px; color: #33502E; background: #E7E9D9; border-radius: 12px;
+    padding: 3px 10px; text-decoration: none; display: inline-block;
+  }
+  a.tag { border-bottom: 1px dotted #33502E; }
+  .tag.self { color: #9C4A1E; background: #F3DFCB; }
+  a.tag.self { border-bottom: 1px dotted #9C4A1E; }
+  .tag.plain { border-bottom: none; }
+
+  .other-note {
+    margin-top: 10px; font-size: 12.5px; color: #7A7160; line-height: 1.7;
+    background: #fff; border-radius: 10px; padding: 10px 12px; border: 1px solid #EDE6D2;
+  }
+  .other-note b { color: #33502E; }
+  .other-note a { color: #9C4A1E; }
+
+  .market-card {
+    background: #EFE6CF; border-radius: 12px; padding: 12px 14px; margin-bottom: 10px;
+  }
+  .market-name-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .market-name { font-size: 15.5px; font-weight: 800; color: #C1652F; }
+  .market-meta { font-size: 12.5px; color: #2B2A22; line-height: 1.6; }
+
+  .bottom-note {
+    margin-top: 20px; text-align: center; font-size: 11.5px; color: #8A7F5E; line-height: 1.7;
+    padding: 0 6px;
+  }
+
+  footer { text-align: center; padding-top: 22px; font-size: 11px; color: #B0A788; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="stamp"><span>{{ data.restaurant.name }}</span></div>
+    <div class="eyebrow">{{ data.header.eyebrow }}</div>
+    <h1>{{ data.header.title }}</h1>
+    <p class="lede">{{ data.header.lede }}</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="section-title map-t">大分・臼杵 有機野菜マップ</div>
+  <div class="map-note">{{ data.map.note }}</div>
+  <div class="map-box">
+{% include "map_svg.j2" %}
+  </div>
+
+  <div class="section-title">お野菜が買えるお店<span class="honor-note">(敬称略)</span></div>
+
+  {% for area in areas %}
+  <div class="area-tag {{ area.pin_class }}">{{ area.label }}</div>
+  {% for store in stores_by_area[area.id] %}
+  <div class="store-card{{ ' highlight' if store.highlight }}">
+    <div class="s-top"><div class="pin {{ area.pin_class }}">{{ store.number }}</div>
+      <div class="s-info">
+        <div class="s-name">{{ store.name }}</div>
+        <div class="s-addr">{{ store.address }}</div>
+        <div class="s-links">
+          <a class="btn map" href="{{ store.map_url }}">📍 地図</a>
+          {% if store.hp_url %}<a class="btn hp" href="{{ store.hp_url }}">🔗 HP</a>{% endif %}
+        </div>
+        <div class="tags">
+          {% for p in store.producers %}
+          {% if p.no_link %}<span class="tag plain">{{ p.name }}</span>
+          {% else %}
+            {% set producer_url = (data.producers | selectattr("name", "equalto", p.name) | first).url %}
+            <a class="tag{{ ' self' if p.self }}" href="{{ producer_url }}">{{ p.name }}</a>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div></div>
+  </div>
+  {% endfor %}
+  {% if area.id == "usuki" %}
+  <div class="other-note">
+    {{ data.producers_extra_note }}<br>
+    <b>{{ data.producers_pending.label }}</b>：<a href="{{ data.producers_pending.url }}">{{ data.producers_pending.name }}</a>
+  </div>
+  {% endif %}
+  {% endfor %}
+
+  <div class="section-title prod">定期開催・有機野菜のマルシェ</div>
+
+  {% for m in data.markets %}
+  <div class="market-card">
+    <div class="market-name-row">
+      <div class="market-name">{{ m.name }}</div>
+      <a class="btn map" href="{{ m.map_url }}">📍 地図</a>
+      <a class="btn hp" href="{{ m.hp_url }}">🔗 HP</a>
+    </div>
+    <div class="market-meta">{{ m.meta }}</div>
+  </div>
+  {% endfor %}
+
+  <div class="bottom-note">
+    ※ {{ data.bottom_note }}
+  </div>
+
+  <footer>{{ data.restaurant.name }}</footer>
+</div>
+</body>
+</html>

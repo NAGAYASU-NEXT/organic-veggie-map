@@ -1,0 +1,203 @@
+{
+  "restaurant": {
+    "name": "百年の春",
+    "marker": { "cx": 405, "cy": 348, "label_y": 382 },
+    "note": "百年の春の座標は仮の目安です。正確な住所が分かり次第、位置を調整してください。"
+  },
+  "header": {
+    "eyebrow": "百年の春が使わせていただいている有機野菜",
+    "title": "有機野菜の生産者さんとお野菜の購入できるお店",
+    "lede": "百年の春でランチをお召し上がりいただいた有機野菜の生産者さんと、その野菜をお取り扱いされているお店の一覧です。お近くのお店をのぞいてみてください。"
+  },
+  "map": {
+    "title": "大分・臼杵 有機野菜マップ（実際の位置関係にもとづいています）",
+    "note": "※Googleマップの座標をもとに作図した目安図です",
+    "viewBox": "0 0 700 460",
+    "print_svg_height": 257
+  },
+  "areas": [
+    { "id": "usuki", "label": "臼杵市エリア（百年の春に近い順）", "pin_class": "usuki", "color": "#9C4A1E" },
+    { "id": "oita",  "label": "大分市エリア（百年の春に近い順）", "pin_class": "", "color": "#33502E" },
+    { "id": "bungo", "label": "豊後大野市エリア", "pin_class": "bungo", "color": "#9C7A20" }
+  ],
+  "stores": [
+    {
+      "number": 1, "area": "usuki", "highlight": true,
+      "name": "なずな", "address": "臼杵市野津町落谷2181-1",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E8%87%BC%E6%9D%B5%E5%B8%82%E9%87%8E%E6%B4%A5%E7%94%BA%E8%90%BD%E8%B0%B72181-1",
+      "hp_url": "https://www.instagram.com/akamine_shigeru/",
+      "producers": [{ "name": "なずな農園", "self": true }],
+      "pin": { "cx": 438, "cy": 368 }
+    },
+    {
+      "number": 2, "area": "usuki",
+      "name": "Aコープ のつ", "address": "臼杵市野津町大字野津市673-1",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E8%87%BC%E6%9D%B5%E5%B8%82%E9%87%8E%E6%B4%A5%E7%94%BA%E5%A4%A7%E5%AD%97%E9%87%8E%E6%B4%A5%E5%B8%82673-1",
+      "hp_url": "https://www.acoop-kyushu.jp/store/archives/8",
+      "producers": [{ "name": "後藤農園" }],
+      "pin": { "cx": 415, "cy": 308 }
+    },
+    {
+      "number": 3, "area": "usuki",
+      "name": "関青果", "address": "臼杵市臼杵187-22",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E8%87%BC%E6%9D%B5%E5%B8%82%E8%87%BC%E6%9D%B5187-22",
+      "hp_url": "https://www.instagram.com/sekiseika.usuki",
+      "producers": [
+        { "name": "槌本農園" }, { "name": "さんさん農園" }, { "name": "yomoyamaya" },
+        { "name": "農園のびのびと" }, { "name": "首藤農園", "no_link": true }
+      ],
+      "pin": { "cx": 512, "cy": 241 }
+    },
+    {
+      "number": 4, "area": "usuki",
+      "name": "めぐみ工房", "address": "臼杵市臼杵56-1",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E8%87%BC%E6%9D%B5%E5%B8%82%E8%87%BC%E6%9D%B556-1",
+      "hp_url": "https://www.megumikoubou.com/",
+      "producers": [{ "name": "さんさん農園" }],
+      "pin": { "cx": 538, "cy": 210 }
+    },
+    {
+      "number": 5, "area": "usuki",
+      "name": "Aコープ臼杵 アニマード", "address": "臼杵市末広15-1",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E8%87%BC%E6%9D%B5%E5%B8%82%E6%9C%AB%E5%BA%8315-1",
+      "hp_url": "https://www.acoop-kyushu.jp/store/archives/12",
+      "producers": [
+        { "name": "後藤農園" }, { "name": "yomoyamaya" }, { "name": "オーガニック太陽" },
+        { "name": "首藤農園", "no_link": true }
+      ],
+      "pin": { "cx": 484, "cy": 208 }
+    },
+    {
+      "number": 6, "area": "oita",
+      "name": "量り売り・からはな百貨店", "address": "大分市中戸次4343-1",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E4%B8%AD%E6%88%B8%E6%AC%A14343-1",
+      "hp_url": "https://www.instagram.com/hakariuri_karahana",
+      "producers": [{ "name": "じゅんた農園" }, { "name": "首藤農園", "no_link": true }, { "name": "ほおのき畑" }],
+      "pin": { "cx": 378, "cy": 199 }
+    },
+    {
+      "number": 7, "area": "oita",
+      "name": "スーパー産直 光吉市場店", "address": "大分市光吉1163-1",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E5%85%89%E5%90%891163-1",
+      "hp_url": null,
+      "producers": [{ "name": "後藤農園" }],
+      "pin": { "cx": 325, "cy": 150 }
+    },
+    {
+      "number": 8, "area": "oita",
+      "name": "スーパー産直 高尾市場店", "address": "大分市横尾4087-7",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E6%A8%AA%E5%B0%BE4087-7",
+      "hp_url": null,
+      "producers": [{ "name": "後藤農園" }],
+      "pin": { "cx": 383, "cy": 134 }
+    },
+    {
+      "number": 9, "area": "oita",
+      "name": "808yamaji", "address": "大分市中鶴崎1丁目8-23",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E4%B8%AD%E9%B6%B4%E5%B4%8E1%E4%B8%81%E7%9B%AE8-23",
+      "hp_url": "https://www.instagram.com/808yamaji",
+      "producers": [{ "name": "槌本農園" }, { "name": "さんさん農園" }],
+      "pin": { "cx": 409, "cy": 97 }
+    },
+    {
+      "number": 10, "area": "oita",
+      "name": "葉な果菜", "address": "大分市城原358-1",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E5%9F%8E%E5%8E%9F358-1",
+      "hp_url": "https://www.hanakana.net/",
+      "producers": [{ "name": "槌本農園" }],
+      "pin": { "cx": 453, "cy": 102 }
+    },
+    {
+      "number": 11, "area": "oita",
+      "name": "とれたて市場 志手店", "address": "大分市三芳2043-2043",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E4%B8%89%E8%8A%B32043-2043",
+      "hp_url": "https://www.instagram.com/toretateichiba2023_4/",
+      "producers": [{ "name": "後藤農園" }],
+      "pin": { "cx": 295, "cy": 135 }
+    },
+    {
+      "number": 12, "area": "oita",
+      "name": "とれたて市場 高城店", "address": "大分市高城新町6-15",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E9%AB%98%E5%9F%8E%E6%96%B0%E7%94%BA6-15",
+      "hp_url": null,
+      "producers": [{ "name": "後藤農園" }],
+      "pin": { "cx": 374, "cy": 95 }
+    },
+    {
+      "number": 13, "area": "oita",
+      "name": "フォーアスサンリブBUONO萩原店", "address": "大分市萩原2丁目3-19",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E8%90%A9%E5%8E%9F2%E4%B8%81%E7%9B%AE3-19",
+      "hp_url": "https://www.instagram.com/forus_buono_hagiwara/",
+      "producers": [{ "name": "農園のびのびと" }],
+      "pin": { "cx": 350, "cy": 75 }
+    },
+    {
+      "number": 14, "area": "oita",
+      "name": "大分トキハ地下2階 農産物コーナー", "address": "大分市府内町2-1-4",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E5%BA%9C%E5%86%85%E7%94%BA2-1-4",
+      "hp_url": null,
+      "producers": [{ "name": "藤島農園" }],
+      "pin": { "cx": 355, "cy": 125 }
+    },
+    {
+      "number": 15, "area": "oita",
+      "name": "こころ広場", "address": "大分市荷揚町10-12",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E8%8D%B7%E6%8F%9A%E7%94%BA10-12",
+      "hp_url": "https://www.instagram.com/kokoro.hiroba/",
+      "producers": [{ "name": "さんさん農園" }],
+      "pin": { "cx": 336, "cy": 98 }
+    },
+    {
+      "number": 16, "area": "oita",
+      "name": "豆の力屋", "address": "大分市志手町3-3",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E5%BF%97%E6%89%8B%E7%94%BA3-3",
+      "hp_url": "http://chikaraya.co.jp/",
+      "producers": [{ "name": "さんさん農園" }, { "name": "ほおのき畑" }],
+      "pin": { "cx": 313, "cy": 106 }
+    },
+    {
+      "number": 17, "area": "bungo",
+      "name": "道の駅 三重", "address": "豊後大野市三重町宮野2791-1",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E5%BE%8C%E5%A4%A7%E9%87%8E%E5%B8%82%E4%B8%89%E9%87%8D%E7%94%BA%E5%AE%AE%E9%87%8E2791-1",
+      "hp_url": null,
+      "producers": [{ "name": "後藤農園" }],
+      "pin": { "cx": 345, "cy": 339 }
+    }
+  ],
+  "producers_extra_note": "そのほか：グリーンコープ県内（ほおのき畑）※地図には掲載していません",
+  "producers_pending": {
+    "label": "販売店 準備中",
+    "name": "西森ゆうじん農場",
+    "url": "https://nishimoriyujin-farm.com/"
+  },
+  "producers": [
+    { "name": "槌本農園", "url": "https://tsuchimotofarm.com/" },
+    { "name": "さんさん農園", "url": "https://www.instagram.com/team_sansan/" },
+    { "name": "じゅんた農園", "url": "https://kichomu-green.com/hostfamily_list/hostfamily04.html" },
+    { "name": "なずな農園", "url": "https://www.instagram.com/nazunanouen/" },
+    { "name": "後藤農園", "url": "https://www.instagram.com/gotofarm.honmamon/" },
+    { "name": "yomoyamaya", "url": "https://www.instagram.com/yomoyamaya_organic/" },
+    { "name": "オーガニック太陽", "url": "https://www.furusato-tax.jp/product/detail/44206/5634733?srsltid=AfmBOoqFr8aaq-24piQUcjeqPQmpjRwtcxZ_sMXY6UMJUf6x16BBV3Bt" },
+    { "name": "農園のびのびと", "url": "https://nobinobito.base.shop/" },
+    { "name": "首藤農園", "url": null },
+    { "name": "藤島農園", "url": "https://www.usuki-kanko.com/archives/manabi_tabi/%E8%97%A4%E5%B6%8B-%E7%A5%90%E7%BE%8E" },
+    { "name": "ほおのき畑", "url": "https://honokibatake.com/", "extra_note": "（グリーンコープ県内でも取扱）" }
+  ],
+  "markets": [
+    {
+      "name": "ひゃくすた",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E7%9C%8C%E8%87%BC%E6%9D%B5%E5%B8%82%E5%A4%A7%E5%AD%97%E6%B7%B1%E7%94%B0804-1%20%E8%87%BC%E6%9D%B5%E7%9F%B3%E4%BB%8F%E5%85%AC%E5%9C%92",
+      "hp_url": "https://www.usuki100sta.com/",
+      "meta": "毎月第一日曜（月1回）開催・臼杵石仏公園にて",
+      "pin": { "cx": 481, "cy": 268 }
+    },
+    {
+      "name": "おおいた Organic Market",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%88%86%E5%B8%82%E4%B8%AD%E5%A4%AE%E7%94%BA4-1-22",
+      "hp_url": "https://www.oita-organicmarket.com/",
+      "meta": "毎週土曜日開催（第5週は休み）・大分市中央町4-1-22 オアシス並木通り商店街",
+      "pin": { "cx": 318, "cy": 92 }
+    }
+  ],
+  "bottom_note": "地図はGoogleマップ上の各店舗の座標をもとに、実際の位置関係にできるだけ近づけて作図しています。掲載の生産者さん・お店は今後も増えていく予定です。"
+}
